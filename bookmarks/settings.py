@@ -12,11 +12,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
-LOGIN_REDIRECT_URL = 'dashboard'
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -29,7 +24,9 @@ SECRET_KEY = '6+ly5=7l%=0&hh32z(l#37eup&tzatz0_0!4^&%1e7eh*8(x#!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "mysite.com", 'localhost', '127.0.0.1'
+]
 
 # Application definition
 
@@ -41,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
+    'social_django',
+    'sslserver'
 ]
 
 MIDDLEWARE = [
@@ -122,3 +121,24 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+AUTHENTICATION_BACKENDS = [
+    # 'django.contrib.auth.backends.ModelBackend',
+    # 'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    # 'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
+]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1007334532987351'  # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '473c8392bfb90af5c878095aaba9e843'  # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '322372212605-0vuv2ouia4jgu0ihkl1dathrvs8rcpq8.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '6XBkJ_9wHatwCF4Gy2sHIHXi'  # Google Consumer Secret

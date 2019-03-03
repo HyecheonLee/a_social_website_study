@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 django = "*"
 pillow = "==5.1.0"
+social-auth-app-django = "==2.1.0"
+django-sslserver = "*"
 
 [requires]
 python_version = "3.6"
