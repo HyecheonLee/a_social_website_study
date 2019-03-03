@@ -136,9 +136,9 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOAuth2',
 ]
 
-SOCIAL_AUTH_FACEBOOK_KEY = '1007334532987351'  # Facebook App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '473c8392bfb90af5c878095aaba9e843'  # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_KEY = ''  # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = ''  # Facebook App Secret
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '322372212605-0vuv2ouia4jgu0ihkl1dathrvs8rcpq8.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '6XBkJ_9wHatwCF4Gy2sHIHXi'  # Google Consumer Secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''  # Google Consumer Secret
